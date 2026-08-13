@@ -1,0 +1,13 @@
+main {
+  display: block;
+}
+
+#home {
+  padding-top: 96px;
+}
+
+@media (max-width: 640px) {
+  #home {
+    padding-top: 80px;
+  }
+}
