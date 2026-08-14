@@ -1,10 +1,14 @@
-import { useState } from 'react';
-import { FiMail, FiGithub, FiLinkedin, FiSend } from 'react-icons/fi';
-import './Contact.css';
+import { useState } from "react";
+import { FiMail, FiGithub, FiLinkedin, FiSend } from "react-icons/fi";
+import "./Contact.css";
 
 function Contact() {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-  const [status, setStatus] = useState('idle'); // 'idle' | 'sent'
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [status, setStatus] = useState("idle"); // 'idle' | 'sent'
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -20,9 +24,9 @@ function Contact() {
     //   2. Use EmailJS from the client to send mail directly from React.
     //   3. Build a small API route (Node/Express) that receives this
     //      formData via fetch() and sends the email server-side.
-    console.log('Contact form submitted:', formData);
-    setStatus('sent');
-    setFormData({ name: '', email: '', message: '' });
+    console.log("Contact form submitted:", formData);
+    setStatus("sent");
+    setFormData({ name: "", email: "", message: "" });
   };
 
   return (
@@ -37,17 +41,22 @@ function Contact() {
           </p>
           <ul className="contact__list">
             <li>
-              <FiMail aria-hidden="true" />{' '}
+              <FiMail aria-hidden="true" />{" "}
               <a href="mailto:your-email@example.com">your-email@example.com</a>
             </li>
             <li>
-              <FiGithub aria-hidden="true" />{' '}
-              <a href="https://github.com/your-github-username" target="_blank" rel="noreferrer">
+              <FiGithub aria-hidden="true" />{" "}
+              <a
+                href="https://github.com/your-github-username"
+                target="_blank"
+                rel="noreferrer"
+              >
                 github.com/your-github-username
               </a>
             </li>
             <li>
-              <FiLinkedin aria-hidden="true" /> <a href="#">Add your LinkedIn URL</a>
+              <FiLinkedin aria-hidden="true" />{" "}
+              <a href="#">Add your LinkedIn URL</a>
             </li>
           </ul>
         </div>
@@ -89,10 +98,11 @@ function Contact() {
           <button type="submit" className="btn btn-primary">
             Send Message <FiSend />
           </button>
-          {status === 'sent' && (
+          {status === "sent" && (
             <p className="contact__status" role="status">
-              Thanks - this form isn&apos;t wired to a backend yet, so nothing was
-              actually sent. See the comment in Contact.jsx for how to connect it.
+              Thanks - this form isn&apos;t wired to a backend yet, so nothing
+              was actually sent. See the comment in Contact.jsx for how to
+              connect it.
             </p>
           )}
         </form>
