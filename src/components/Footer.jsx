@@ -12,7 +12,7 @@ function Footer() {
     <footer className="footer">
       <div className="container footer__inner">
         <div>
-          <p className="footer__name">Robel Yemaneh</p>
+          <p className="footer__name">Robel Yemaneh Wubetu</p>
           <p className="footer__tagline">
             Software Engineering student building toward full-stack development.
           </p>
